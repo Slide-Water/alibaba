@@ -6,6 +6,8 @@ $(function(){
     myPutAjax_415('post',"builder/browsing_history_demand/",{demand_id:sessionStorage.build},builder)
     function builder(res){
         data_1(res[0].data.demand)    
+        $('#head').load('../pages/head.html');
+        $('#footer').load('../pages/footer.html');
         $('.collect').click(function () {
             myPutAjax_415('put', 'builder/demand_collect_state/', { demand_id: sessionStorage.build }, workman)
             function workman(res) {
@@ -25,8 +27,6 @@ $(function(){
                 }
                 
             }
-            $('#head').load('../pages/head.html');
-            $('#footer').load('../pages/footer.html');
         })
         }
       

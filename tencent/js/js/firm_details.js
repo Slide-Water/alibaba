@@ -85,10 +85,10 @@ function data_1(data_1) {
        </div> 
       </div> 
       <div class="resume-btn"> 
-       <input type="button" value="申请" class='apply'/> 
-       <input type="button" value="收藏" class='collect'/> 
-       <input type="button" value="取消收藏" style="display: none;" /> 
-      </div> 
+        <input type="button" value="进一步沟通" class='apply'/> 
+        <input type="button" value="收藏" class='collect'/> 
+        <input type="button" value="取消收藏" style="display: none;" /> 
+       </div> 
      </div>
      
      <div id="footer"></div>

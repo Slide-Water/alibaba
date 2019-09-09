@@ -80,7 +80,7 @@ getAjax1('GET', 'developers/home_page_developers_demand_num/').then(
       $('.in_page').click(function(){
         var role = sessionStorage.role;
         if(role == 1){
-          sessionStorage.setItem('developers',this.getAttribute('value'))
+          sessionStorage.setItem('build',this.getAttribute('value'))
           location.href = './pages/firm_details.html'
         }
         else if(role == 0){

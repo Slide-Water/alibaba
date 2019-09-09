@@ -80,7 +80,39 @@ click(li_,show)
 //省市联动
 form()
 
-
+$('#myid').click(function(){
+    //$('.zh').remove();
+    
+    if(this.value == '修改'){
+        this.value = '提交'
+        $('.xs').after(' <input type="text" name="input_password" class="mima"> <input type="text" name="new_password " class="mima"> <input type="text" name="re_password " class="mima">')
+        $('.yc').toggle();    
+    }
+    else{
+        // this.value = '修改'
+        // $('.mima').remove();
+        var input_password = $('.mima').eq(0)
+        var new_password = $('.mima').eq(1)
+        var re_password = $('.mima').eq(2)
+        myPutAjax_415('PUT','user/change_password/',{
+            input_password:input_password.val(),
+            new_password:new_password.val(),
+            re_password:re_password.val()
+        },change_password)
+        function change_password(res){
+            if(res[0].code == 200){
+                alert('修改成功')
+                $('.yc').toggle();
+                $('#myid').value = '修改'
+                $('.mima').remove();
+            }
+            else if(res[0].code == 422){
+                alert('密码错误')
+            }
+        }
+    }
+     
+})
 
 
 
@@ -275,7 +307,7 @@ function layuiTable(id,url,table_id){
               });
             } else if(obj.event === 'edit'){
                 sessionStorage.setItem('build',data.demand.id)
-                location.href='firm_details.html'
+                location.href='demand.html'
             }
         })
     })
