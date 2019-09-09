@@ -1,0 +1,518 @@
+//设置宽高的方法
+@mixin wh($w, $h) {
+  width: $w + px;
+  height: $h + px;
+}
+//设置1px边框
+@mixin bd($color) {
+  border: 1px solid $color;
+}
+//设置背景颜色
+@mixin bg($color) {
+  background-color: $color;
+}
+//设置字体
+@mixin font($size, $color) {
+  font-size: $size + px;
+  color: $color;
+}
+//公共样式
+.toib {
+  display: inline-block;
+}
+//广告栏样式
+.ad {
+  @include wh(1190, 66);
+  @include bd(#000);
+  margin: 0 auto;
+}
+//权限
+.container > p{
+  height: 500px;
+  text-align: center;
+  line-height: 500px;
+  font-size: 30px;
+}
+//二级导航
+.sec-banner {
+  @include wh(1190, 52);
+  border-bottom: 1px solid #0090c5;
+  // border:none;
+  box-sizing: border-box;
+  margin: 70px auto 0;
+}
+.sec-banner ul {
+  display: flex;
+  justify-content: space-between;
+  li {
+    a {
+      @include font(23, #666666);
+      padding-bottom: 12px;
+      line-height: 50px;
+      padding: 0 24px 12px;
+      z-index: 100;
+    }
+  }
+}
+//基本信息
+.mess {
+  @include font(17, #666666);
+  margin: 19px auto 0;
+  @include wh(1190, 543);
+  .mess-nav {
+    height: 74px;
+    @include bd(#d5d3d3);
+    padding-left: 18px;
+    background-color: #efeaea;
+    span:nth-child(1) {
+      font: 600 25px/74px "microsoft yahei";
+      color: #666666;
+    }
+    span:nth-child(2) {
+      margin-left: 27px;
+      font-size: 15px;
+      color: #ef3e3e;
+    }
+  }
+
+  input {
+    @include wh(252, 36);
+  }
+  .mess-content {
+    display: flex;
+  }
+  .mess-content span {
+    color: #ef3e3e;
+  }
+  .mess-left-top {
+    margin-top: 15px;
+    width: 400px;
+    div {
+      text-align: right;
+      height: 50px;
+      label {
+        width: 112px;
+        text-align: right;
+      }
+      span {
+        margin-left: 9px;
+        padding-right: 9px;
+      }
+    }
+  }
+  .com_scale{
+    width:252px;
+    height: 36px;
+  }
+}
+.mess-left-bottom {
+  width: 496px;
+  div {
+    text-align: right;
+  }
+  textarea {
+    @include wh(348, 101);
+    resize: none;
+  }
+  .apt-check .apt-check-send {
+    display: inline-block;
+    @include wh(348, 149);
+    resize: none;
+    cursor: pointer;
+    border: 1px solid #efeaea;
+    i{
+      display: block;
+      text-align: center;
+    }
+  }
+  select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #efeaea;
+    outline: none;
+    @include wh(111, 36);
+    background:url(../../image/图标/企业下拉菜单.png) no-repeat right;
+  }
+  .sect {
+    width: 149px;
+    height: 36px;
+    line-height: 36px;
+  }
+  .sect1 {
+    width: 347px;
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+  }
+  span {
+    margin-left: 9px;
+    padding-right: 9px;
+  }
+  .sect,
+  .sect1 {
+    float: left;
+  }
+  .apt-check div {
+    position: relative;
+    label {
+      position: absolute;
+      top: 0;
+      left: 55px;
+    }
+  }
+}
+//右边
+.mess-right {
+  margin-top: 10px;
+  width: 694px;
+  textarea {
+    @include wh(456, 146);
+    resize: none;
+  }
+  .sumit1,
+  .sumit2 {
+    @include wh(92, 17);
+    label {
+      text-align: right;
+    }
+  }
+}
+.mess-blank {
+  width: 127px;
+}
+.pic-give {
+  border: 1px solid #d5d3d3 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include wh(142, 134);
+  @include bd(black);
+  background:url(../../image/logo与图片素材/上传拷贝.png) no-repeat center;
+  img{
+    @include wh(142,134);
+  }
+  .layui-upload-list{
+    width: 100%;
+    height: 100%;
+  }
+}
+.mess-right > div {
+  display: flex;
+  margin-bottom: 17px;
+}
+//负责人认证
+.approve {
+  @extend .mess;
+  margin-top: 260px;
+  border-bottom: 1px dashed #d5d3d3;
+  input {
+    @include wh(252, 36);
+  }
+  .id-card-3{
+    margin-top:15px;
+  }
+}
+.approve-nav {
+  @extend .mess-nav;
+}
+.title-wh {
+  text-align: right;
+  width: 148px;
+}
+.approve-pub span {
+  color: red;
+  margin-right: 9px;
+}
+.send-id {
+  font-size: 15px !important;
+  margin-top: 23px;
+}
+.approve-pub:nth-child(1) {
+  margin-top: 31px;
+}
+.approve-pub:nth-child(2) {
+  margin-top: 18px;
+}
+.id-card-box{
+  @include wh(686, 205);
+  margin-left: 153px;
+  display: flex;
+  justify-content: space-between;
+  margin-top:-20px;
+}
+.id-card {
+  border: 1px solid #d0cfcf;
+  position: relative;
+  @include wh(330, 205);
+  .send-myhead{
+    width:10px;
+    height: 10px;
+    img{
+      @include wh(330,205);
+    }
+    button{
+      @include wh(140,158);
+      background:url(../../image/logo与图片素材/id_Positive-0a929d430bd699a8c02fcd76927b6398b43a74f4e21e463f7fd53dda69129f20.png) no-repeat;
+      position: absolute;
+      top:24px;
+      left:81px;
+      outline: none;
+      span{
+        font-size:12px;
+        color:#d0cfcf;
+        position: absolute;
+        bottom:-50px;
+        left:0;
+      }
+    }
+  }
+}
+#test3{
+  background: url(../../image/logo与图片素材/id_opposite-70c360ee0ac3d755fa37fcde02c59ff70eede5dbbe724e59dac2ca1a156fb7f4.png) no-repeat;
+}
+.intro-ab{
+  margin-top:15px;
+  span{
+    position: absolute;
+    left: 117px;
+  }
+}
+//提交信息按钮
+.btn-mess {
+  @include wh(280, 51);
+  background-color: #477eba;
+  border-radius: 10px;
+  @include font(25, #fff);
+  text-align: center;
+  margin: 33px 758px 67px;
+}
+//我的项目sass
+.part3 {
+  width: 1190px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pro-box span {
+  flex: 1;
+}
+.pro-nav {
+  width: 890px;
+  height: 74px;
+  border: solid 1px #d0cfcf;
+  @include bd(#d5d3d3);
+  padding-left: 18px;
+  background-color: #efeaea;
+  font: 600 25px/74px "microsoft yahei";
+  margin: 0 auto;
+}
+.part3-left {
+  width: 891px;
+}
+.part3-right1 {
+  width: 274px;
+  height: 251px;
+  background-color: #efeaea;
+  border-radius: 10px;
+  img{
+    width:71px;
+    margin:33px 0 16px 102px;
+  }
+  p{
+    font-size:12px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+}
+.part3-right2 {
+  overflow: hidden;
+  margin-top: 17px;
+  background-color: #efeaea;
+  height: 182px;
+  width: 274px;
+  .contact-comp1{
+    margin-left:35px;
+    color:#666666;
+    margin-top:15px;
+    h3{
+      font:700 18px "microsoft yhei";
+    }
+    p{
+      font-size: 12px;
+    }
+    .toib p:nth-child(1){
+      font: 700 24px "microsoft yahei";
+    }
+    .toib:nth-of-type(1){
+      font-size: 40px;
+      position: relative;
+      top:-10px;
+    }
+  }
+}
+.pro-blank {
+  flex: 1;
+}
+//收藏建筑商
+.collect {
+  margin: 29px 0;
+}
+
+//发布任务
+.part2 {
+  position: relative;
+  @extend .part3;
+  input {
+    @include wh(221, 36);
+  }
+}
+.pro-nav .issue {
+  font-size: 15px;
+  color: #666;
+  margin-left: 18px;
+  span {
+    color: red;
+  }
+}
+.ineed {
+  margin-top: 22px;
+  label {
+    vertical-align: top;
+  }
+}
+.ineed textarea {
+  @include wh(759, 108);
+  resize: none;
+}
+.give-time {
+  margin-top: 19px;
+  margin-bottom: 18px;
+  input:nth-of-type(1) {
+    width: 185px;
+    margin-right: 156px;
+  }
+  select{
+    @include wh(221,36);
+  }
+  select:nth-of-type(1){
+    margin-right: 156px;
+  }
+}
+.type-check {
+  input[type="radio"] {
+    @include wh(20, 20);
+  }
+  label {
+    padding-right: 37px;
+  }
+}
+.pic-paper {
+  margin-top:23px;
+  label {
+    padding-right: 5px;
+  }
+  button{
+    @include wh(185,36);
+    background-color:#477eba;
+  }
+}
+.btn-mess2{
+  margin-left:320px;
+}
+
+//写tab切换的样式
+
+.part{
+  margin-top:22px;
+}
+.borderBlue{
+  border: 1px solid #477eba;
+  border-bottom: 1px solid #fff;
+}
+
+// 内容2
+.sc{
+  border-bottom: 1px solid rgb(229,225,225);
+  h1{
+      font-size: 25px;
+      color: rgb(71,126,186); 
+  }
+}
+
+  .sc-title,.sc-info{
+      margin-top: 12px;
+      height: 30px;
+      display: flex;
+      background: #efeaea;
+      p,a{
+          text-align: center;
+          line-height: 30px;
+          font-size: 15px;
+      }
+      .sc-bh{
+          width: 200px;
+          font-size: 15px;
+          margin-left: 18px;
+          input[type=checkbox]{
+              margin-right: 22px;
+              width: 16px;
+              height: 16px;
+              border: 1px solid #999999;
+          }
+      }
+      .sc-j{
+          flex: 1;
+      }
+      .sc-xg{
+          width: 300px;
+          text-align: center;
+          a{
+              padding: 0 5px;
+          }
+      }
+  }
+  .sc-title > div{
+      display: inline-block;
+  }
+
+.sc-info{
+  background: none;
+}
+.sc-content{
+  .sc-c{
+      @include wh(39px,36px);
+  }
+}
+ .sc-foot{
+  background: #efeaea;
+     height: 44px;
+     .sc-left{
+          font-size: 15px;
+          margin-left: 18px;
+         input[type=checkbox]{
+             margin-right: 22px;
+             width: 16px;
+             height: 16px;
+             border: 1px solid #999999;
+         }
+
+  }
+     .sc-right{
+         margin-right: 49px;
+         input[type=button]{
+          width: 156px;
+          height: 30px;
+          background-color: #477eba;
+          outline: none;
+          border: 0;
+          color: #fff;
+          text-align: center;
+         }
+         input:nth-child(1){
+             margin-right: 45px;
+         }
+     }
+ }
